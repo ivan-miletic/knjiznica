@@ -1,0 +1,6 @@
+C:\Users\IvanMiletic\Desktop\Knjižnica\Knjiznica\obj\Debug\net6.0\Knjiznica.csproj.AssemblyReference.cache
+C:\Users\IvanMiletic\Desktop\Knjižnica\Knjiznica\obj\Debug\net6.0\Knjiznica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IvanMiletic\Desktop\Knjižnica\Knjiznica\obj\Debug\net6.0\Knjiznica.AssemblyInfoInputs.cache
+C:\Users\IvanMiletic\Desktop\Knjižnica\Knjiznica\obj\Debug\net6.0\Knjiznica.AssemblyInfo.cs
+C:\Users\IvanMiletic\Desktop\Knjižnica\Knjiznica\obj\Debug\net6.0\Knjiznica.csproj.CoreCompileInputs.cache
+C:\Users\IvanMiletic\Desktop\Knjižnica\Knjiznica\obj\Debug\net6.0\Knjiznica.MvcApplicationPartsAssemblyInfo.cache

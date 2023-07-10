@@ -1,0 +1,33 @@
+﻿@page "/autori"
+
+<h3>Autori</h3>
+
+@if (autori != null)
+{
+    foreach (var autor in autori)
+    {
+        <p>@autor.Ime</p>
+        <button @onclick="() => ObrisiAutora(autor.Id)">Obriši</button>
+    }
+}
+else
+{
+    <p>Loading...</p>
+}
+
+<h4>Unesi/Ažuriraj autora</h4>
+
+<div>
+    <label for="ime">Ime:</label>
+    <input type="text" id="ime" @bind="@noviAutor.Ime" />
+</div>
+<div>
+    <label for="prezime">Prezime:</label>
+    <input type="text" id="prezime" @bind="@noviAutor.Prezime" />
+</div>
+<div>
+    <label for="biografija">Biografija:</label>
+    <input type="text" id="biografija" @bind="@noviAutor.Biografija" />
+</div>
+
+<button @onclick="DodajAžurirajAutora">Dodaj/Ažuriraj autora</button>

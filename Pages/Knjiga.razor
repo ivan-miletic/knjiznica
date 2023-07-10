@@ -1,0 +1,71 @@
+﻿@page "/knjige"
+
+<h3>Knjige</h3>
+
+@if (knjige != null)
+{
+    foreach (var knjiga in knjige)
+    {
+        <p>@knjiga.Naslov</p>
+        <button @onclick="() => ObrisiKnjigu(knjiga.Id)">Obriši</button>
+    }
+}
+else
+{
+    <p>Loading...</p>
+}
+
+<h4>Unesi/Ažuriraj knjigu</h4>
+
+<div>
+    <label for="autor">Autor:</label>
+    <input type="text" id="autor" @bind="@novaKnjiga.Autor" />
+</div>
+<div>
+    <label for="naslov">Naslov:</label>
+    <input type="text" id="naslov" @bind="@novaKnjiga.Naslov" />
+</div>
+<div>
+    <label for="status">Status:</label>
+    <input type="text" id="status" @bind="@novaKnjiga.Status" />
+</div>
+
+<button @onclick="DodajAžurirajKnjigu">Dodaj/Ažuriraj knjigu</button>
+
+@if (posudeneKnjige != null)
+{
+    foreach (var posudba in posudeneKnjige)
+    {
+        <p>Knjiga: @posudba.Knjiga.Naslov</p>
+        <p>Korisnik: @posudba.Korisnik.Ime @posudba.Korisnik.Prezime</p>
+        <p>Od: @posudba.DatumPosudbe.ToShortDateString()</p>
+        <p>Do: @posudba.DatumVracanja.ToShortDateString()</p>
+        <button @onclick="() => VratiKnjigu(posudba)">Vrati knjigu</button>
+    }
+}
+
+<h4>Posudi knjigu</h4>
+
+<div>
+    <label for="korisnik">Korisnik:</label>
+    <select id="korisnik" @bind="@posudbaKorisnikId">
+        <option value="">Odaberi korisnika</option>
+        @foreach (var korisnik in korisnici)
+        {
+            <option value="@korisnik.Id">@korisnik.Ime @korisnik.Prezime</option>
+        }
+    </select>
+</div>
+<div>
+    <label for="knjiga">Knjiga:</label>
+    <select id="knjiga" @bind="@posudbaKnjigaId">
+        <option value="">Odaberi knjigu</option>
+        @foreach (var knjiga in slobodneKnjige)
+        {
+            <option value="@knjiga.Id">@knjiga.Naslov</option>
+        }
+    </select>
+</div>
+<button @onclick="PosudiKnjigu">Posudi knjigu</button>
+
+

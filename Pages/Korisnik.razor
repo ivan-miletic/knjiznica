@@ -1,0 +1,33 @@
+﻿@page "/korisnici"
+
+<h3>Korisnici</h3>
+
+@if (korisnici != null)
+{
+    foreach (var korisnik in korisnici)
+    {
+        <p>@korisnik.Ime</p>
+        <button @onclick="() => ObrisiKorisnika(korisnik.Id)">Obriši</button>
+    }
+}
+else
+{
+    <p>Loading...</p>
+}
+
+<h4>Unesi/Ažuriraj korisnika</h4>
+
+<div>
+    <label for="ime">Ime:</label>
+    <input type="text" id="ime" @bind="@noviKorisnik.Ime" />
+</div>
+<div>
+    <label for="prezime">Prezime:</label>
+    <input type="text" id="prezime" @bind="@noviKorisnik.Prezime" />
+</div>
+<div>
+    <label for="email">Email:</label>
+    <input type="text" id="email" @bind="@noviKorisnik.Email" />
+</div>
+
+<button @onclick="DodajAžurirajKorisnika">Dodaj/Ažuriraj korisnika</button>
